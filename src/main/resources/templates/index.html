@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:td="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+    <style>
+        .container {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table class="pure-table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>创建时间</th>
+                <th>内容</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="todo : ${list}">
+                <td th:text="${todo.id}"></td>
+                <td th:text="${todo.createTime}"></td>
+                <td th:text="${todo.content}"></td>
+                <td th:text="${todo.status == 2}? '完成' : '未完成'"></td>
+                <td><a th:href="@{/modify/{id}/2(id=${todo.id})}">完成</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <form class="pure-form" action="/add" method="POST">
+            <label>
+                <input name="content" type="text" placeholder="提交todo">
+            </label>
+            <button type="submit" class="pure-button pure-button-primary">提交</button>
+        </form>
+    </div>
+</body>
+</html>
