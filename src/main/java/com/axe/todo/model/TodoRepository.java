@@ -11,13 +11,15 @@ import java.util.List;
 
 public interface TodoRepository extends CrudRepository<Todo, Long> {
 
+    @Override
     List<Todo> findAll();
 
+    @Override
     @SuppressWarnings("unchecked")
     Todo save(Todo todo);
 
-    @Transactional
     @Modifying
+    @Transactional(rollbackOn = Exception.class)
     @Query("update Todo as t set t.status = ?2 where t.id=?1")
     void updateById(Long id, int status);
 }
