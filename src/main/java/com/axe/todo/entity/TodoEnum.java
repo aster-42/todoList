@@ -1,8 +1,5 @@
 package com.axe.todo.entity;
 
-import lombok.Getter;
-import lombok.Setter;
-
 public enum TodoEnum {
     /**
      * 待完成
