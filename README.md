@@ -7,7 +7,8 @@
     user: root
     pwd: root
 
+
 页面
-    
-    http://localhost:8080/
-    
+[http://localhost:8080/](http://localhost:8080/ )    
+
+![sample](./sample.png )
