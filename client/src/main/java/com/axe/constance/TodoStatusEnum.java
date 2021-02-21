@@ -1,6 +1,6 @@
 package com.axe.constance;
 
-public enum TodoEnum {
+public enum TodoStatusEnum {
     /**
      * 待完成
      * 完成
@@ -10,7 +10,7 @@ public enum TodoEnum {
     ;
     int status;
 
-    TodoEnum(int status) {
+    TodoStatusEnum(int status) {
         this.status = status;
     }
 

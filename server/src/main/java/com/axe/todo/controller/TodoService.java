@@ -1,7 +1,7 @@
 package com.axe.todo.controller;
 
 import com.axe.todo.entity.Todo;
-import com.axe.constance.TodoEnum;
+import com.axe.constance.TodoStatusEnum;
 import com.axe.todo.model.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,7 +32,7 @@ public class TodoService {
 
     @RequestMapping("/add")
     public String add(String content) {
-        repository.save(new Todo(TodoEnum.StatusTodo.getStatus(), content));
+        repository.save(new Todo(TodoStatusEnum.StatusTodo.getStatus(), content));
         return "redirect:/";
     }
 
